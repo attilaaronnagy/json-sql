@@ -8,24 +8,26 @@
     "type": "git",
     "url": "git@github.com:2do2go/json-sql.git"
   },
-  "keywords": [
-    "json-sql",
-    "json",
-    "sql",
-    "odm",
-    "mapper",
-    "db",
-    "database"
-  ],
+  "keywords": ["json-sql", "json", "sql", "odm", "mapper", "db", "database"],
   "dependencies": {
     "underscore": "1.8.2"
   },
   "devDependencies": {
     "chai": "2.2.0",
+    "eslint": "^4.11.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.8.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.5.1",
     "gulp": "^3.8.11",
     "gulp-istanbul": "^0.10.0",
     "gulp-jshint": "^1.10.0",
     "gulp-mocha": "^2.0.1"
   },
-  "main": "./lib/index"
+  "main": "./lib/index",
+  "scripts": {
+    "test": "gulp test",
+    "coverage": "gulp coverage"
+  }
 }
