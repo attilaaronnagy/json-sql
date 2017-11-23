@@ -69,20 +69,20 @@ describe('Select', () => {
     it('should be ok with object(`name`:`alias`)', () => {
       const result = jsonSql.build({
         table: 'users',
-        fields: { userAge: 'age', userScore: 'score' }
+        fields: { userage: 'age', userscore: 'score' }
       });
 
-      expect(result.query).to.be.equal('select "userAge" as "age", "userScore" as "score" from "users";');
+      expect(result.query).to.be.equal('select "userage" as "age", "userscore" as "score" from "users";');
       expect(result.values).to.be.eql({});
     });
 
     it('should be ok with object(`name`:`alias`) array', () => {
       const result = jsonSql.build({
         table: 'users',
-        fields: [{ userAge: 'age' }]
+        fields: [{ userage: 'age' }]
       });
 
-      expect(result.query).to.be.equal('select "userAge" as "age" from "users";');
+      expect(result.query).to.be.equal('select "userage" as "age" from "users";');
       expect(result.values).to.be.eql({});
     });
 
@@ -119,30 +119,30 @@ describe('Select', () => {
     it('should be ok with object(`name`,`alias`) array', () => {
       const result = jsonSql.build({
         table: 'users',
-        fields: [{ name: 'zoneName', alias: 'zone' }]
+        fields: [{ name: 'zonename', alias: 'zone' }]
       });
 
-      expect(result.query).to.be.equal('select "zoneName" as "zone" from "users";');
+      expect(result.query).to.be.equal('select "zonename" as "zone" from "users";');
       expect(result.values).to.be.eql({});
     });
 
     it('should be ok with object(`name`,`table`,`alias`) array', () => {
       const result = jsonSql.build({
         table: 'users',
-        fields: [{ name: 'zoneName', table: 'users', alias: 'zone' }]
+        fields: [{ name: 'zonename', table: 'users', alias: 'zone' }]
       });
 
-      expect(result.query).to.be.equal('select "users"."zoneName" as "zone" from "users";');
+      expect(result.query).to.be.equal('select "users"."zonename" as "zone" from "users";');
       expect(result.values).to.be.eql({});
     });
 
     it('should be ok with object(`name`,`table`,`alias`,`cast`) array', () => {
       const result = jsonSql.build({
         table: 'users',
-        fields: [{ name: 'zoneName', table: 'users', alias: 'zone', cast: 'integer' }]
+        fields: [{ name: 'zonename', table: 'users', alias: 'zone', cast: 'integer' }]
       });
 
-      expect(result.query).to.be.equal('select cast("users"."zoneName" as integer) as "zone" from "users";');
+      expect(result.query).to.be.equal('select cast("users"."zonename" as integer) as "zone" from "users";');
       expect(result.values).to.be.eql({});
     });
 

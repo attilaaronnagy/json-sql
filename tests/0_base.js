@@ -22,7 +22,7 @@ describe('Builder', () => {
     expect(jsonSql.dialect.modifiers).to.be.ok;
   });
 
-  it('should throw error with wrong `type` property', () => {
+  it("should throw error with wrong 'type' property", () => {
     expect(() => {
       jsonSql.build({
         type: 'wrong'
